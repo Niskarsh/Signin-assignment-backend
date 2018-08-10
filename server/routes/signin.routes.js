@@ -3,6 +3,6 @@ import { linkedin } from '../controllers/signin.controller'
 
 let router = express.Router()
 
-router.post ('/', linkedin)
+router.get ('/', linkedin)
 
 export default router

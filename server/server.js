@@ -1,4 +1,7 @@
+import 'babel-polyfill'
 import app from './utils/common'
+
+require('dotenv').config()
 
 const port = process.env.PORT || 3000
 
