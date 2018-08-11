@@ -1,6 +1,7 @@
 import request from 'request-promise'
 
 export const accessCodeFetcher = async (req, res) => {
+    const authorizationCode = req.query.code
 
     let options = {
         method: 'POST',
