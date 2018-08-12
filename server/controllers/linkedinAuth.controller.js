@@ -1,7 +1,7 @@
 import request from 'request-promise'
 
 export const accessCodeFetcher = async (req, res) => {
-    const authorizationCode = req.query.code
+    let authorizationCode = req.query.code
 
     let options = {
         method: 'POST',
@@ -12,17 +12,16 @@ export const accessCodeFetcher = async (req, res) => {
         form: {
             grant_type: `authorization_code`,
             code: authorizationCode,
-            redirect_uri: `http://localhost:3001/authorize`,
+            redirect_uri: `http://localhost:3000/authenticate`,
             client_id: process.env.CLIENT_ID,
             client_secret: process.env.CLIENT_SECRET
         }
 
     }
 
-    await request(options).then(data => {
-        res.send(data)
+    await request(options).then(data => { 
+        return res.send(data)
     }).catch(e => {
-        res.send(e)
+        return res.send(e)
     });
-
 }
