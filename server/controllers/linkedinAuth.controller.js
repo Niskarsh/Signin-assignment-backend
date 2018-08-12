@@ -18,7 +18,7 @@ export const accessCodeFetcher = async (req, res) => {
         }
 
     }
-
+    
     await request(options).then(data => { 
         return res.send(data)
     }).catch(e => {

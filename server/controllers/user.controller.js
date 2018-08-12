@@ -1,7 +1,7 @@
 
 import request from 'request-promise'
 export const userProfile = async (req, res) => {
-    console.log (req.headers.authorization)
+
     let options = {
         method: 'GET',
         uri: 'https://api.linkedin.com/v1/people/~?format=json',
