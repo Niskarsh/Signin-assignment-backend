@@ -12,7 +12,7 @@ export const accessCodeFetcher = async (req, res) => {
         form: {
             grant_type: `authorization_code`,
             code: authorizationCode,
-            redirect_uri: `http://localhost:3000/authenticate`,
+            redirect_uri: `${process.env.AUTHENTICATE_CALLBACK}`,
             client_id: process.env.CLIENT_ID,
             client_secret: process.env.CLIENT_SECRET
         }
